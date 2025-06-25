@@ -207,6 +207,11 @@ if (LLAMA_BUILD_COMMON AND LLAMA_BUILD_TOOLS)
     add_subdirectory(tools)
 endif()
 
+# Add OpenCog QAT Framework
+if (LLAMA_BUILD_COMMON)
+    add_subdirectory(src/opencog-qat)
+endif()
+
 #
 # install
 #
