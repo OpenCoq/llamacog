@@ -5,6 +5,8 @@ add_library(opencog_qat
     synthetic-calibration.cpp
     opencog-quantization.cpp
     qat-framework.cpp
+    hypergraph-utils.cpp
+    extended-atomspace.cpp
 )
 
 target_include_directories(opencog_qat PUBLIC
