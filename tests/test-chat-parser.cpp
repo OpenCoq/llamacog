@@ -99,6 +99,40 @@ static void test_reasoning() {
     assert_equals("<think>Cogito</think>", builder.result().content);
     assert_equals("Ergo sum", builder.consume_rest());
   }
+  // Test RR reasoning format
+  {
+    common_chat_msg_parser builder("<rr>Triadic relevance</rr>Response", /* is_partial= */ false, {
+        /* .format = */ COMMON_CHAT_FORMAT_CONTENT_ONLY,
+        /* .reasoning_format = */ COMMON_REASONING_FORMAT_RR,
+        /* .reasoning_in_content = */ false,
+        /* .thinking_forced_open = */ false,
+    });
+    assert_equals(true, builder.try_parse_reasoning("<rr>", "</rr>"));
+    assert_equals(std::string("Triadic relevance"), builder.result().reasoning_content);
+    assert_equals("Response", builder.consume_rest());
+  }
+  {
+    common_chat_msg_parser builder("Triadic relevance</rr>Response", /* is_partial= */ false, {
+        /* .format = */ COMMON_CHAT_FORMAT_CONTENT_ONLY,
+        /* .reasoning_format = */ COMMON_REASONING_FORMAT_RR,
+        /* .reasoning_in_content = */ false,
+        /* .thinking_forced_open = */ true,
+    });
+    assert_equals(true, builder.try_parse_reasoning("<rr>", "</rr>"));
+    assert_equals(std::string("Triadic relevance"), builder.result().reasoning_content);
+    assert_equals("Response", builder.consume_rest());
+  }
+  {
+    common_chat_msg_parser builder("Triadic relevance</rr>Response", /* is_partial= */ false, {
+        /* .format = */ COMMON_CHAT_FORMAT_CONTENT_ONLY,
+        /* .reasoning_format = */ COMMON_REASONING_FORMAT_RR,
+        /* .reasoning_in_content = */ true,
+        /* .thinking_forced_open = */ true,
+    });
+    assert_equals(true, builder.try_parse_reasoning("<rr>", "</rr>"));
+    assert_equals("<rr>Triadic relevance</rr>", builder.result().content);
+    assert_equals("Response", builder.consume_rest());
+  }
 }
 
 static void test_regex() {
