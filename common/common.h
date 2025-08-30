@@ -220,6 +220,7 @@ enum common_reasoning_format {
     COMMON_REASONING_FORMAT_NONE,
     COMMON_REASONING_FORMAT_DEEPSEEK_LEGACY, // Extract thinking tag contents and return as `message.reasoning_content`, or leave inline in <think> tags in stream mode
     COMMON_REASONING_FORMAT_DEEPSEEK,        // Extract thinking tag contents and return as `message.reasoning_content`, including in streaming deltas.
+    COMMON_REASONING_FORMAT_RR,              // Relevance Realization: Extract RR tag contents and return as `message.reasoning_content`, supporting triadic reasoning architecture.
 };
 
 struct common_params {
