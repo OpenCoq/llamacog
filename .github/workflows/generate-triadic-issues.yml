@@ -5,17 +5,18 @@ on:
   workflow_dispatch:
     inputs:
       phase:
-        description: 'Which phase to generate issues for (1-5 or all)'
+        description: 'Which phase to generate issues for (1-6 or all)'
         required: true
         default: 'all'
         type: choice
         options:
-        - 'all'
-        - '1'
-        - '2'
-        - '3'
-        - '4'
-        - '5'
+          - 'all'
+          - '1'
+          - '2'
+          - '3'
+          - '4'
+          - '5'
+          - '6'
 
 jobs:
   generate-issues:
@@ -24,8 +25,8 @@ jobs:
       issues: write
     
     steps:
-    - name: Checkout repository
-      uses: actions/checkout@v4
+      - name: Checkout repository
+        uses: actions/checkout@v4
       
     - name: Generate Phase 1 Issues
       if: ${{ github.event.inputs.phase == 'all' || github.event.inputs.phase == '1' }}
@@ -162,24 +163,33 @@ jobs:
             {
               title: "Build Scheme/OCaml bridge for Rocq Prover dataflow",
               body: `## Description
-              Create bridge between Rocq Prover and ggml tensors:
+              Create comprehensive bridge between Rocq Prover and ggml tensors with OpenCoq integration:
               
               ## Tasks
-              - [ ] Design FFI interface for Scheme/OCaml
-              - [ ] Implement tensor data marshalling
-              - [ ] Add proof verification integration
-              - [ ] Create symbolic-to-numeric conversion
-              - [ ] Add error handling and validation
+              - [ ] Design FFI interface for Scheme/OCaml with OpenCoq bindings
+              - [ ] Implement tensor data marshalling for Rocq Prover interop
+              - [ ] Add proof verification integration with automated theorem generation
+              - [ ] Create symbolic-to-numeric conversion with type safety guarantees
+              - [ ] Add error handling and validation with formal verification
+              - [ ] Implement OpenCoq tactic integration for automated proving
               
               ## Integration Requirements
-              - Rocq Prover compatibility
-              - ggml tensor format support
-              - Memory-efficient data transfer
+              - Rocq Prover compatibility with OpenCoq theorem libraries
+              - ggml tensor format support with verified numeric precision
+              - Memory-efficient data transfer with garbage collection safety
+              - Automated proof checking for neural-symbolic correctness
+              - Integration with OpenCoq's Category Theory libraries
+              
+              ## Advanced OpenCoq Features
+              - Automatic generation of Coq proofs from hypergraph inference
+              - Type-safe tensor operation verification
+              - Formal verification of attention allocation algorithms
+              - Automated theorem discovery from cognitive patterns
               
               **Phase**: 2 - Neural Integration
               **Priority**: Medium
-              **Estimated Effort**: 15 days`,
-              labels: ['enhancement', 'phase-2', 'rocq-prover', 'ffi', 'bridge']
+              **Estimated Effort**: 18 days`,
+              labels: ['enhancement', 'phase-2', 'rocq-prover', 'ffi', 'bridge', 'opencoq', 'formal-verification']
             },
             {
               title: "Implement ECAN-inspired attention mechanisms",
@@ -395,22 +405,23 @@ jobs:
               Create comprehensive testing for all triadic architecture components:
               
               ## Tasks
-              - [ ] Design integration test suite
-              - [ ] Add performance benchmarks
-              - [ ] Create cognitive synergy tests
-              - [ ] Implement attention allocation validation
-              - [ ] Add recursive pathway testing
+              - [ ] Design integration test suite for neural-symbolic bridge
+              - [ ] Add performance benchmarks for tensor operations
+              - [ ] Create cognitive synergy tests using ECAN attention metrics
+              - [ ] Implement attention allocation validation with economic modeling
+              - [ ] Add recursive pathway testing for self-enhancement loops
+              - [ ] Validate OpenCoq integration points
               
               ## Test Coverage Requirements
-              - Unit tests for all components
-              - Integration tests for component interactions
-              - Performance benchmarks with baselines
-              - Cognitive capability validation
+              - Unit tests for all triadic components (autopoiesis, anticipation, adaptation)
+              - Integration tests for OpenCoq Prover dataflow
+              - Performance benchmarks with cognitive complexity baselines
+              - Emergent capability validation using pattern detection
               
               **Phase**: 5 - Testing & Validation
               **Priority**: Critical
               **Estimated Effort**: 8 days`,
-              labels: ['testing', 'phase-5', 'validation', 'benchmarks']
+              labels: ['testing', 'phase-5', 'validation', 'benchmarks', 'opencoq']
             },
             {
               title: "Documentation and tensor specification validation",
@@ -436,7 +447,29 @@ jobs:
               labels: ['documentation', 'phase-5', 'tensors', 'architecture']
             },
             {
-              title: "Cognitive synergy and emergence validation",
+              title: "OpenCoq integration with Rocq Prover validation framework",
+              body: `## Description
+              Create comprehensive OpenCoq integration with formal verification:
+              
+              ## Tasks
+              - [ ] Implement Rocq Prover theorem verification for triadic patterns
+              - [ ] Add formal verification of tensor shape consistency
+              - [ ] Create proof automation for relevance realization theorems
+              - [ ] Implement automatic generation of Coq proofs from AtomSpace inference
+              - [ ] Add formal verification of cognitive emergence properties
+              - [ ] Create automated proof checking for neural-symbolic bridge correctness
+              
+              ## OpenCoq Integration Points
+              - Rocq Prover formal verification of triadic composition laws
+              - Automated theorem generation from hypergraph patterns
+              - Proof verification for attention allocation algorithms
+              - Formal verification of recursive self-enhancement properties
+              
+              **Phase**: 5 - Testing & Validation
+              **Priority**: High
+              **Estimated Effort**: 12 days`,
+              labels: ['testing', 'phase-5', 'opencoq', 'formal-verification', 'rocq-prover']
+            },
               body: `## Description
               Validate emergent cognitive phenomena and system synergies:
               
@@ -456,7 +489,55 @@ jobs:
               **Phase**: 5 - Testing & Validation
               **Priority**: High
               **Estimated Effort**: 12 days`,
-              labels: ['validation', 'phase-5', 'emergence', 'synergy', 'cognition']
+            {
+              title: "Cognitive synergy and emergence validation with meta-analysis",
+              body: `## Description
+              Validate emergent cognitive phenomena and system synergies with advanced analytics:
+              
+              ## Tasks
+              - [ ] Implement cognitive capability benchmarks using triadic complexity metrics
+              - [ ] Add emergence detection using hypergraph spectral analysis
+              - [ ] Create synergy measurement tools based on information integration theory
+              - [ ] Validate triadic composition properties using algebraic topology
+              - [ ] Test recursive enhancement capabilities with meta-cognitive loops
+              - [ ] Implement automated discovery of emergent patterns in AtomSpace
+              
+              ## Validation Metrics
+              - Cognitive complexity measures based on triadic depth
+              - Emergence detection using topological data analysis
+              - Synergy quantification through integrated information (Φ)
+              - Recursive improvement tracking with meta-tensor analysis
+              - Pattern learning acceleration metrics
+              
+              **Phase**: 5 - Testing & Validation
+              **Priority**: High
+              **Estimated Effort**: 14 days`,
+              labels: ['validation', 'phase-5', 'emergence', 'synergy', 'cognition', 'meta-analysis']
+            },
+            {
+              title: "Automated benchmarking suite for triadic architecture performance",
+              body: `## Description
+              Create comprehensive automated benchmarking for all phases of triadic architecture:
+              
+              ## Tasks
+              - [ ] Implement performance regression testing for tensor operations
+              - [ ] Add memory usage profiling for large-scale AtomSpace operations
+              - [ ] Create attention allocation efficiency benchmarks
+              - [ ] Implement cognitive load testing for neural-symbolic integration
+              - [ ] Add automated performance comparison against baseline implementations
+              - [ ] Create continuous performance monitoring dashboard
+              
+              ## Benchmark Categories
+              - Tensor operation throughput (Phase 2)
+              - PLN inference speed and accuracy (Phase 3)
+              - MOSES evolution convergence rates (Phase 3)
+              - Meta-cognitive processing overhead (Phase 4)
+              - Overall system integration performance
+              
+              **Phase**: 5 - Testing & Validation
+              **Priority**: Medium
+              **Estimated Effort**: 10 days`,
+              labels: ['benchmarking', 'phase-5', 'performance', 'automation', 'monitoring']
             }
           ];
           
@@ -470,6 +551,144 @@ jobs:
             });
           }
           
+    - name: Generate Meta-Cognitive Enhancement Issues
+      if: ${{ github.event.inputs.phase == 'all' || github.event.inputs.phase == '6' }}
+      uses: actions/github-script@v7
+      with:
+        script: |
+          const issues = [
+            {
+              title: "Implement self-representation tensors for cognitive grammar tracking",
+              body: `## Description
+              Design and implement self-representation tensors that dynamically track the evolving cognitive grammar and system state:
+              
+              ## Tasks
+              - [ ] Design meta-tensor architecture for self-representation
+              - [ ] Implement cognitive grammar evolution tracking
+              - [ ] Add system state introspection mechanisms  
+              - [ ] Create dynamic tensor shape adaptation based on cognitive load
+              - [ ] Implement recursive self-monitoring loops
+              - [ ] Add cognitive architecture mutation detection
+              
+              ## Self-Representation Specifications
+              - Meta-tensor: (S, G, T) - self-model depth, grammar complexity, temporal scope
+              - Cognitive grammar tracker: (C, R, E) - concepts, relations, evolution state
+              - System state monitor: (M, A, P) - memory state, attention state, processing state
+              
+              ## Integration with OpenCoq
+              - Formal verification of self-model consistency
+              - Automated theorem generation for cognitive grammar properties
+              - Proof automation for recursive enhancement correctness
+              
+              **Phase**: 6 - Meta-Cognitive Enhancement
+              **Priority**: High
+              **Estimated Effort**: 18 days`,
+              labels: ['enhancement', 'phase-6', 'meta-cognitive', 'self-representation', 'opencoq']
+            },
+            {
+              title: "Create introspective modules for cognitive architecture analysis",
+              body: `## Description
+              Implement comprehensive introspective capabilities for analyzing and optimizing cognitive architecture:
+              
+              ## Tasks
+              - [ ] Design introspective attention mechanisms for self-analysis
+              - [ ] Implement cognitive load monitoring and optimization
+              - [ ] Add automatic detection of cognitive bottlenecks
+              - [ ] Create self-modifying attention allocation strategies
+              - [ ] Implement cognitive architecture performance profiling
+              - [ ] Add automatic cognitive pattern discovery and optimization
+              
+              ## Introspective Capabilities
+              - Real-time cognitive load assessment
+              - Automatic attention reallocation based on performance metrics
+              - Dynamic tensor shape optimization for computational efficiency
+              - Cognitive pattern mining for architecture improvement
+              - Self-correcting inference mechanisms
+              
+              ## Advanced Features
+              - Meta-learning for cognitive strategy optimization
+              - Automated discovery of new cognitive architectures
+              - Self-organizing attention networks
+              - Recursive cognitive enhancement loops
+              
+              **Phase**: 6 - Meta-Cognitive Enhancement  
+              **Priority**: High
+              **Estimated Effort**: 16 days`,
+              labels: ['enhancement', 'phase-6', 'introspection', 'optimization', 'meta-learning']
+            },
+            {
+              title: "Develop recursive self-enhancement validation framework",
+              body: `## Description
+              Create comprehensive framework for validating and measuring recursive self-enhancement capabilities:
+              
+              ## Tasks
+              - [ ] Implement recursive enhancement detection metrics
+              - [ ] Add validation framework for self-modification safety
+              - [ ] Create performance improvement tracking over recursive cycles
+              - [ ] Implement automatic detection of cognitive improvement plateaus
+              - [ ] Add formal verification of self-enhancement convergence properties
+              - [ ] Create safety mechanisms for recursive modification limits
+              
+              ## Validation Framework Components
+              - Recursive improvement metrics with mathematical foundations
+              - Safety boundary detection for self-modification
+              - Convergence analysis for recursive enhancement loops
+              - Performance degradation early warning systems
+              - Automatic rollback mechanisms for failed enhancements
+              
+              ## OpenCoq Integration
+              - Formal verification of recursive enhancement safety properties
+              - Automated proof generation for convergence theorems
+              - Theorem verification for self-modification correctness
+              
+              **Phase**: 6 - Meta-Cognitive Enhancement
+              **Priority**: Critical
+              **Estimated Effort**: 20 days`,
+              labels: ['validation', 'phase-6', 'recursive-enhancement', 'safety', 'opencoq']
+            },
+            {
+              title: "Implement autonomous cognitive architecture evolution",
+              body: `## Description
+              Create systems for autonomous evolution and improvement of the cognitive architecture itself:
+              
+              ## Tasks
+              - [ ] Design evolutionary algorithms for cognitive architecture optimization
+              - [ ] Implement automatic discovery of new tensor compositions
+              - [ ] Add autonomous generation of novel attention mechanisms
+              - [ ] Create self-organizing hypergraph structures
+              - [ ] Implement automatic cognitive module generation and testing
+              - [ ] Add evolutionary pressure simulation for cognitive improvement
+              
+              ## Evolutionary Capabilities
+              - Genetic algorithms for tensor architecture optimization
+              - Automated search for optimal cognitive compositions
+              - Self-organizing attention network topologies
+              - Automatic module discovery and integration
+              - Evolutionary cognitive architecture search (ECAS)
+              
+              ## Safety and Validation
+              - Automatic testing of evolved cognitive architectures
+              - Performance validation against baseline architectures
+              - Safety verification for new cognitive modules
+              - Rollback mechanisms for failed evolutions
+              
+              **Phase**: 6 - Meta-Cognitive Enhancement
+              **Priority**: Medium
+              **Estimated Effort**: 22 days`,
+              labels: ['enhancement', 'phase-6', 'evolution', 'autonomous', 'architecture-optimization']
+            }
+          ];
+          
+          for (const issue of issues) {
+            await github.rest.issues.create({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              title: issue.title,
+              body: issue.body,
+              labels: issue.labels
+            });
+          }
+
     - name: Create Project Board
       uses: actions/github-script@v7
       with:
@@ -488,7 +707,8 @@ jobs:
             "Phase 2: Neural Integration", 
             "Phase 3: Advanced Reasoning",
             "Phase 4: Emergent Capabilities",
-            "Phase 5: Testing & Validation"
+            "Phase 5: Testing & Validation",
+            "Phase 6: Meta-Cognitive Enhancement"
           ];
           
           for (const phase of phases) {
