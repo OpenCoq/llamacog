@@ -43,7 +43,9 @@ def main():
     print("• Phase 1 Core Components (HypergraphUtils & ExtendedAtomSpace)")
     print("• Tensor specifications for Phases 2-4")
     print("• Neural-symbolic integration foundation")
-    print("• GitHub action for automated issue generation")
+    print("• Enhanced GitHub action for automated issue generation")
+    print("• OpenCoq integration roadmap for formal verification")
+    print("• Phase 6: Meta-Cognitive Enhancement framework")
     print()
     
     # Test 1: Build the enhanced OpenCog QAT framework
@@ -101,10 +103,19 @@ def main():
     print("   • Goal tensor: (G, C) - goal categories/cognitive context")
     print()
     
-    # Test 6: Check GitHub action
-    if os.path.exists(".github/workflows/generate-triadic-issues.yml"):
-        print("✅ GitHub Action for Issue Generation: READY")
+    # Test 6: Check GitHub actions
+    enhanced_action = ".github/workflows/generate-enhanced-triadic-issues.yml"
+    original_action = ".github/workflows/generate-triadic-issues.yml" 
+    
+    if os.path.exists(enhanced_action):
+        print("✅ Enhanced GitHub Action for Issue Generation: READY")
         print("   → Run manually from GitHub Actions tab")
+        print("   → Will generate OpenCoq-integrated development issues")
+        print("   → Creates enhanced project board with formal verification")
+        print("   → Includes Phase 6: Meta-Cognitive Enhancement")
+    elif os.path.exists(original_action):
+        print("✅ Original GitHub Action for Issue Generation: READY")
+        print("   → Run manually from GitHub Actions tab") 
         print("   → Will generate 15+ development issues across all phases")
         print("   → Creates project board for tracking progress")
     else:
@@ -128,14 +139,15 @@ def main():
     print("🧬 Ready for Phase 4: Emergent Capabilities")
     print()
     print("🎯 Next Steps:")
-    print("   1. Run GitHub Action to generate development issues")
-    print("   2. Implement neural-symbolic bridges")
-    print("   3. Build PLN reasoning modules")
-    print("   4. Create meta-cognitive systems")
-    print("   5. Develop goal generation autonomy")
+    print("   1. Run Enhanced GitHub Action to generate OpenCoq-integrated issues")
+    print("   2. Implement neural-symbolic bridges with formal verification")
+    print("   3. Build PLN reasoning modules with mathematical guarantees")
+    print("   4. Create meta-cognitive systems with safety proofs")
+    print("   5. Develop goal generation autonomy with OpenCoq verification")
+    print("   6. Establish recursive self-enhancement with formal safety bounds")
     print()
     print("The foundation for the complete Triadic Architecture of")
-    print("Relevance Realization is now successfully integrated! 🎊")
+    print("Relevance Realization with OpenCoq integration is ready! 🎊")
     
     return True
 
